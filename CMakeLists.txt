@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13.0)
 
 project(corgi-containers LANGUAGES CXX VERSION 1.0.0)
-
+set(CMAKE_DEBUG_POSTFIX d)
 add_library(${PROJECT_NAME} INTERFACE)
 
 target_include_directories(${PROJECT_NAME} INTERFACE 
