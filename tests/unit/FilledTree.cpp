@@ -10,16 +10,16 @@ int main()
         auto result = corgi::test::run_all();
         return result;
     }
-    catch(std::exception e )
+    catch(std::exception& e)
     {
-        std::cout<<e.what()<<std::endl;
+        std::cout << e.what() << std::endl;
         return 1;
     }
 }
 //
 //class TestTree : public Test
 //{
-//    //  11 
+//    //  11
 //    //  |____ 21
 //    //  |     |____ 31
 //    //  |     |____ 32
@@ -32,7 +32,7 @@ int main()
 //        node22 =   &node11->emplace_back(22);
 //        node31 =   &node21->emplace_back(31);
 //        node32 =   &node21->emplace_back(32);
-//        node41 =   &node32->emplace_back(41); 
+//        node41 =   &node32->emplace_back(41);
 //    }
 //
 //protected:
@@ -61,7 +61,7 @@ int main()
 //TEST_F(TestTree, children_emplace)
 //{
 //    // Action
-//    
+//
 //    auto& component = tree.emplace_back();
 //
 //    // Assert
@@ -79,7 +79,7 @@ int main()
 //TEST_F(TestTree, clear)
 //{
 //    // Action
-//    
+//
 //    tree.clear();
 //
 //    // Assert
@@ -129,7 +129,7 @@ int main()
 //
 //TEST_F(TestTree, tree_iterator)
 //{
-//    //  11 
+//    //  11
 //    //  |____ 21
 //    //  |     |____ 31
 //    //  |     |____ 32
@@ -166,12 +166,12 @@ int main()
 //        i++;
 //    }
 //
-//    // just making sure we iterated the right amount of time 
-//    assert_that(i, equals(6));  
+//    // just making sure we iterated the right amount of time
+//    assert_that(i, equals(6));
 //
 //    tree.iterator_mode(IteratorMode::BreadthFirst);
 //
-//    //  11 
+//    //  11
 //    //  |____ 21
 //    //  |     |____ 31
 //    //  |     |____ 32
@@ -204,7 +204,7 @@ int main()
 //        }
 //        i++;
 //    }
-//    assert_that(i, equals(6)); // Checks if we iterated the right amount of time 
+//    assert_that(i, equals(6)); // Checks if we iterated the right amount of time
 //}
 //
 //
@@ -214,7 +214,7 @@ int main()
 //
 //    int i=0;
 //
-//    //  11 
+//    //  11
 //    //  |____ 21
 //    //  |     |____ 31
 //    //  |     |____ 32
@@ -247,7 +247,7 @@ int main()
 //
 //    node11->iterator_mode(IteratorMode::BreadthFirst);
 //
-//    //  11 
+//    //  11
 //    //  |____ 21
 //    //  |     |____ 31
 //    //  |     |____ 32
@@ -277,13 +277,13 @@ int main()
 //        }
 //        i++;
 //    }
-//    // just making sure we iterated the right amount of time 
-//    assert_that(i, equals(5)); 
+//    // just making sure we iterated the right amount of time
+//    assert_that(i, equals(5));
 //}
 ////
 ////TEST_F(TestTree, Remove_RootNode_EmptyTheTree)
 ////{
-////	
+////
 ////    containers::remove(tree.data(), 0);
 ////
 ////    assert_that(tree.empty(), equals(true));
@@ -306,7 +306,7 @@ int main()
 //    // };
 //
 //    // auto remove_cb =  [&](Node<Component>& comp)
-//    // {    
+//    // {
 //    //     created_count_--;
 //    // };
 //
@@ -372,9 +372,9 @@ int main()
 //    // Assert
 //
 //    assert_that(owning_pointer.get(), non_equals(nullptr));
-//	
+//
 //    assert_that(node22->parent(), equals(nullptr));
-//	
+//
 //    assert_that(node11->size(), equals(1));
 //
 //}
@@ -382,7 +382,7 @@ int main()
 //TEST_F(TestTree, copy_node)
 //{
 //    // Start Tree
-//    //  11 
+//    //  11
 //    //  |____ 21
 //    //  |     |____ 31
 //    //  |     |____ 32
@@ -390,7 +390,7 @@ int main()
 //    //  |_____22
 //
 //    // End Tree
-//    //  11 
+//    //  11
 //    //  |____ 21
 //    //  |     |____ 31
 //    //  |     |____ 32
@@ -400,7 +400,7 @@ int main()
 //    //              |____ 31
 //    //              |____ 32
 //    //                   |____41
-//    //        
+//    //
 //
 //    node22->push_back(*node21);
 //
