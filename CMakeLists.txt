@@ -10,6 +10,13 @@ target_include_directories(${PROJECT_NAME} INTERFACE
 
 # Installing the library 
 
+if(MSVC)
+target_compile_options(${PROJECT_NAME} INTERFACE -W4 -WX)
+else()
+target_compile_options(${PROJECT_NAME} INTERFACE -Wall -Werror)
+endif()
+
+
 install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Targets
     LIBRARY     DESTINATION lib
     RUNTIME     DESTINATION bin)
