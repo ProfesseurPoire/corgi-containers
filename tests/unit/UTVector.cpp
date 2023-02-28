@@ -1,5 +1,3 @@
-#pragma once
-
 #include <corgi/containers/Vector.h>
 #include <corgi/test/test.h>
 
