@@ -21,4 +21,3 @@ for %%i in ( x64) do (
     )
     endlocal
 )
-pause
